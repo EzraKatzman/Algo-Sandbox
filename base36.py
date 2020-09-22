@@ -4,6 +4,11 @@
 
 # input number -> divide by 36 (save number for next iteration), % 36 (convert to 0-Z format, add to beginning of output string) 
 # can get divide and mod with divmod() method
+
+# Divide the number by 36.
+# Get the integer quotient for the next iteration.
+# Get the remainder for the hex digit.
+# Repeat the steps until the quotient is equal to 0.
 r = 73
 def to_base_36(r):
     print("Mod remainder: " + str(divmod(r, 36) [1])) # mod remainder (converted to base36 value)
