@@ -1,14 +1,3 @@
-# to_base_36
-# research solution for this
-# Keep track of values 0-9, A-Z, as 0-36
-
-# input number -> divide by 36 (save number for next iteration), % 36 (convert to 0-Z format, add to beginning of output string) 
-# can get divide and mod with divmod() method
-
-# Divide the number by 36.
-# Get the integer quotient for the next iteration.
-# Get the remainder for the hex digit.
-# Repeat the steps until the quotient is equal to 0.
 alphabet = {
     "0" : "0",
     "1" : "1",
@@ -51,24 +40,21 @@ alphabet = {
 key_list = list(alphabet.keys())
 val_list = list(alphabet.values())
 
-r = 29234652
-
 def to_base_36(r, result):
-    result += alphabet[str(divmod(r, 36) [1])]  # mod remainder (converted to base36 value)
+    result += alphabet[str(divmod(r, 36) [1])]  
     if divmod(r, 36) [0] != 0:
-        to_base_36(divmod(r, 36) [0], result) # quotient (pushed back to method)
+        to_base_36(divmod(r, 36) [0], result) 
     else:
         print(result[::-1])
 
-
-to_base_36(r, "")
-
 def to_int(r):
     y, result = 0, 0
-    for x in list(str(r))[::-1]: # for breaking up the base36 into components for converting
+    for x in list(str(r))[::-1]: 
         result += int(key_list[val_list.index(x)]) * 36 ** y
         y += 1
     print(result)
-# Similar method to converting from haxadecimal/binary to integer
-# Reverse string, break for each element in string - convert to numerical value - *36^[x] + ...
-to_int("FUCKYOU")
+
+#Convert integer to base36
+to_base_36(11168434984638296100531098218969554919276774, "")
+# Convert word to integer
+to_int("ANTIDISESTABLISHMENTARIANISM")
