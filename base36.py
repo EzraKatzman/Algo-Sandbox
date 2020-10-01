@@ -48,18 +48,27 @@ alphabet = {
     "35" : "Z"
 }
 
-r = 173
+key_list = list(alphabet.keys())
+val_list = list(alphabet.values())
+
+r = 29234652
 
 def to_base_36(r, result):
     result += alphabet[str(divmod(r, 36) [1])]  # mod remainder (converted to base36 value)
-    if divmod(r, 36) [0] == 0:
-        print(result)
-    else:
+    if divmod(r, 36) [0] != 0:
         to_base_36(divmod(r, 36) [0], result) # quotient (pushed back to method)
+    else:
+        print(result[::-1])
 
 
 to_base_36(r, "")
 
-# to_int
+def to_int(r):
+    y, result = 0, 0
+    for x in list(str(r))[::-1]: # for breaking up the base36 into components for converting
+        result += int(key_list[val_list.index(x)]) * 36 ** y
+        y += 1
+        print(result)
 # Similar method to converting from haxadecimal/binary to integer
 # Reverse string, break for each element in string - convert to numerical value - *36^[x] + ...
+to_int("HELLO")
