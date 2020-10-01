@@ -68,7 +68,7 @@ def to_int(r):
     for x in list(str(r))[::-1]: # for breaking up the base36 into components for converting
         result += int(key_list[val_list.index(x)]) * 36 ** y
         y += 1
-        print(result)
+    print(result)
 # Similar method to converting from haxadecimal/binary to integer
 # Reverse string, break for each element in string - convert to numerical value - *36^[x] + ...
-to_int("HELLO")
+to_int("FUCKYOU")
