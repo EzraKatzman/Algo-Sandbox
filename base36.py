@@ -54,7 +54,7 @@ def to_int(r):
         y += 1
     print(result)
 
-#Convert integer to base36
+# Convert integer to base36
 to_base_36(11168434984638296100531098218969554919276774, "")
 # Convert word to integer
 to_int("ANTIDISESTABLISHMENTARIANISM")
