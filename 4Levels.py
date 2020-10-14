@@ -1,7 +1,7 @@
 from functools import reduce
 # Given an unsorted array [1, 2, ..., n] which has a single element missing, determine the missing element in O(n) time and O(1) space.
 def oddManOut(arr):
-    return sum(range(max(arr)+1)) - sum(arr)
+    return (len(arr) + 1)*(len(arr) + 2)/2 - sum(arr)
 
 print(oddManOut([1,2,3,4,6,7,8,9]))
 
